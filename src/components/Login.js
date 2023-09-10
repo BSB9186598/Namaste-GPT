@@ -14,22 +14,14 @@ import { BG_URL, USER_URL } from "../utils/constants";
 const Login = () => {
   const [signInForm, setSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-
-
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef(null)
-
   const dispatch = useDispatch();
-
-  const handleButtonClick = () => {
+  const handleSignUpBtnClick = () => {
     const message = checkValidData(email.current?.value, password.current?.value, name.current?.value);
-    // console.log(email.current.value, password.current.value, name.current.value)
-    // console.log(message)
     setErrorMessage(message);
-
     if (message) return;
-
     if (!signInForm) {
       // sign up logic
       createUserWithEmailAndPassword(
@@ -57,8 +49,6 @@ const Login = () => {
             .catch((error) => {
               setErrorMessage(error.message )
             });
-
-          // console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -74,7 +64,6 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          // console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -83,7 +72,7 @@ const Login = () => {
         });
     }
   };
-
+  // useHandleSignUpBtnClick()
   const toggleSignIn = () => {
     setSignInForm(!signInForm);
   };
@@ -94,13 +83,14 @@ const Login = () => {
         <img
           src={BG_URL}
           alt=""
+          className="h-screen object-cover md:w-screen"
         />
       </div>
       <form
         onSubmit={(e) => {
           e.preventDefault();
         }}
-        className="bg-gray-950 bg-opacity-80 text-white w-3/12 mx-auto absolute my-36 right-0 left-0 p-16"
+        className="bg-gray-950 bg-opacity-80 text-white 2xl:w-3/12 mx-auto absolute my-36 right-0 left-0 p-16 w-full md:w-2/4 xl:w-6/12"
       >
         <h1 className="text-3xl font-bold mb-8">
           {signInForm ? "Sign In" : "Sign Up"}
@@ -131,7 +121,7 @@ const Login = () => {
         <p className="font-bold text-red-600 text-lg mt-6">{errorMessage}</p>
         <button
           className="p-4 my-4 bg-red-700 rounded-xl w-full"
-          onClick={handleButtonClick}
+          onClick={handleSignUpBtnClick}
         >
           {signInForm ? "Sign In" : "Sign Up"}
         </button>
@@ -141,7 +131,6 @@ const Login = () => {
             : "Already registered? Sign In now"}
         </p>
       </form>
-      {/* <Browse /> */}
     </div>
   );
 };

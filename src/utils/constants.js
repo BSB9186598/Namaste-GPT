@@ -15,3 +15,13 @@ export const API_OPTIONS = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNzkyNWQ0ZTQ0NjU5OGRhOTI3YjUzOTE3ZjcwOGI5YiIsInN1YiI6IjY0ZWY5NDRlZTBjYTdmMDBjYmU0MDU2ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.MuiIHbdPKORmH07q9w_d-8QhAPG22RBZRHcRlIYb3TQ",
   },
 };
+
+export const POSTER_IMG = "https://image.tmdb.org/t/p/w500/";
+
+export const SUPPORTED_LANGUAGES = [
+  { identifier: "en", name: "English" },
+  { identifier: "hindi", name: "Hindi" },
+  { identifier: "spanish", name: "Spanish" },
+];
+
+export const OPEN_AI = process.env.REACT_APP_OPEN_AI;
