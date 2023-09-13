@@ -23,10 +23,10 @@ const Header = () => {
   const handleSignOutBtn = () => {
     signOut(auth)
       .then(() => {
-        dispatch(removeUser());
+        
       })
       .catch((error) => {
-        navigate("/");
+        navigate("/error");
       });
   };
 
@@ -42,7 +42,7 @@ const Header = () => {
             photoURL: photoURL,
           })
         );
-        navigate("/browse");
+        navigate("/browse");   
       } else {
         dispatch(removeUser());
         navigate("/");
