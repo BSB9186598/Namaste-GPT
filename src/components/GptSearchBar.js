@@ -4,7 +4,7 @@ import lang from "../utils/languageConstants";
 import { useDispatch, useSelector } from "react-redux";
 import openai from "../utils/openAi";
 import { addGptMovieResult, addLoader } from "../utils/gptSlice";
-import Shimmer from "./Shimmer";
+// import Shimmer from "./Shimmer";
 
 const GptSearchBar = () => {
   const dispatch = useDispatch()
