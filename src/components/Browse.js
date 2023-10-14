@@ -34,13 +34,3 @@ const Browse = () => {
 };
 
 export default Browse;
-
-
-/**const promotedCard = () => {
- * return () => {
- * return(
- * 
- * )
- * 
- * }
- * } */
