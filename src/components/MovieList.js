@@ -1,7 +1,4 @@
-
 import MovieCard from "./MovieCard";
-// import Shimmer from "./Shimmer";
-
 
 const MovieList = ({ title, movies }) => {
   
